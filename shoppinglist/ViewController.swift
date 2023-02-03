@@ -10,7 +10,8 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tablView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tablView.dequeueReusableCell(withIdentifier: "celid", for: indexPath)
-        cell.textLabel?.text = "hello"
+        let currentItem = item[indexPath.row]
+        cell.textLabel?.text = currentItem.name
       return cell
     }
     
