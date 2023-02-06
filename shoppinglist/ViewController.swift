@@ -12,41 +12,53 @@ class ViewController: UIViewController, UITableViewDataSource {
         let cell = tablView.dequeueReusableCell(withIdentifier: "celid", for: indexPath)
         let currentItem = item[indexPath.row]
         cell.textLabel?.text = currentItem.name
-      return cell
+        return cell
     }
     
     var item : [Item] = []
     @IBOutlet weak var tablView: UITableView!
     
+    @IBOutlet weak var newitemtextfield: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         tablView.dataSource = self
-    let Item1 = Item(name:"grapes")
-    let Item2 = Item(name:"water")
+        let Item1 = Item(name:"grapes")
+        let Item2 = Item(name:"water")
         item = [Item1,Item2]
-}
+    }
     func tableView(_ tablView: UITableView,numberOfRowsInSection section:Int ) -> Int
     {
         return item.count
         
         
     }
-      
-//        func tableView(_tableView: UITableView, cellFowRowAt inexPath)->
-//    }
-//
+    
+    //        func tableView(_tableView: UITableView, cellFowRowAt inexPath)->
+    //    }
+    //
     
     
+    @IBAction func rita(_ sender: Any) {
+        
+        if let newItemName = newitemtextfield.text{
+            let newItem = Item(name: newItemName )
+            item . append(newItem)
+            tablView.reloadData()
+            
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
     
-    
-    
-    
-    
-    
-    
-    
-
 }
-
