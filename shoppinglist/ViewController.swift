@@ -24,8 +24,8 @@ class ViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         tablView.dataSource = self
-        let Item1 = Item(name:"grapes")
-        let Item2 = Item(name:"water")
+        let Item1 = Item(name:"grapes", qty: 2 )
+        let Item2 = Item(name:"water", qty: 2)
         item = [Item1,Item2]
     }
     func tableView(_ tablView: UITableView,numberOfRowsInSection section:Int ) -> Int
@@ -43,7 +43,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     @IBAction func rita(_ sender: Any) {
         
         if let newItemName = newitemtextfield.text{
-            let newItem = Item(name: newItemName )
+            let newItem = Item(name: newItemName, qty:)
             item . append(newItem)
             tablView.reloadData()
             

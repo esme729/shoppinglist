@@ -10,9 +10,15 @@ class Item
 
 {
     var name:String
-    
-    init(name: String) {
+var qty:Int
+    init(name: String, qty:Int) {
         self.name = name
+        self.qty = qty
+        
+        
     }
+    
+    
 }
+
     
