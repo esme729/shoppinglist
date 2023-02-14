@@ -12,7 +12,9 @@ class ViewController: UIViewController, UITableViewDataSource {
         let cell = tablView.dequeueReusableCell(withIdentifier: "celid", for: indexPath)
         let currentItem = item[indexPath.row]
         cell.textLabel?.text = currentItem.name
-        return cell
+cell.detailTextLabel?.text = "Quantity: \(currentItem.q qty)"
+        
+         return cell
     }
     
     var item : [Item] = []
@@ -43,13 +45,13 @@ class ViewController: UIViewController, UITableViewDataSource {
     @IBAction func rita(_ sender: Any) {
         
         if let newItemName = newitemtextfield.text{
-            let newItem = Item(name: newItemName, qty:)
+            let newItem = Item(name: newItemName, qty: 2)
             item . append(newItem)
             tablView.reloadData()
             
         }
         
-        
+          
         
         
         
